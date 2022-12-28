@@ -3,13 +3,10 @@
 namespace Tests\Feature;
 
 use App\Http\Livewire\IdeaShow;
-use App\Models\Category;
 use App\Models\Idea;
-use App\Models\Status;
 use App\Models\User;
 use App\Models\Vote;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Livewire\Livewire;
 use Tests\TestCase;
 
@@ -86,9 +83,9 @@ class VoteShowPageTest extends TestCase
         $idea = Idea::factory()->create();
 
         Livewire::test(IdeaShow::class, [
-                'idea' => $idea,
-                'votesCount' => 5,
-            ])
+            'idea' => $idea,
+            'votesCount' => 5,
+        ])
             ->call('vote')
             ->assertRedirect(route('login'));
     }

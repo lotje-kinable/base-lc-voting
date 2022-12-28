@@ -2,16 +2,13 @@
 
 namespace Tests\Feature;
 
-use App\Http\Livewire\DeleteIdea;
 use App\Http\Livewire\IdeaIndex;
 use App\Http\Livewire\IdeaShow;
 use App\Http\Livewire\MarkIdeaAsNotSpam;
 use App\Http\Livewire\MarkIdeaAsSpam;
 use App\Models\Idea;
 use App\Models\User;
-use App\Models\Vote;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\Response;
 use Livewire\Livewire;
 use Tests\TestCase;
@@ -63,8 +60,8 @@ class SpamManagementTest extends TestCase
         $idea = Idea::factory()->create();
 
         Livewire::test(MarkIdeaAsSpam::class, [
-                'idea' => $idea,
-            ])
+            'idea' => $idea,
+        ])
             ->call('markAsSpam')
             ->assertStatus(Response::HTTP_FORBIDDEN);
     }
@@ -89,9 +86,9 @@ class SpamManagementTest extends TestCase
         $idea = Idea::factory()->create();
 
         Livewire::test(IdeaShow::class, [
-                'idea' => $idea,
-                'votesCount' => 4,
-            ])
+            'idea' => $idea,
+            'votesCount' => 4,
+        ])
             ->assertDontSee('Mark as Spam');
     }
 
@@ -139,8 +136,8 @@ class SpamManagementTest extends TestCase
         $idea = Idea::factory()->create();
 
         Livewire::test(MarkIdeaAsNotSpam::class, [
-                'idea' => $idea,
-            ])
+            'idea' => $idea,
+        ])
             ->call('markAsNotSpam')
             ->assertStatus(Response::HTTP_FORBIDDEN);
     }
@@ -167,9 +164,9 @@ class SpamManagementTest extends TestCase
         $idea = Idea::factory()->create();
 
         Livewire::test(IdeaShow::class, [
-                'idea' => $idea,
-                'votesCount' => 4,
-            ])
+            'idea' => $idea,
+            'votesCount' => 4,
+        ])
             ->assertDontSee('Not Spam');
     }
 

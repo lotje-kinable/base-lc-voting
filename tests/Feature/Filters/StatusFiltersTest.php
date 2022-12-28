@@ -7,7 +7,6 @@ use App\Http\Livewire\StatusFilters;
 use App\Models\Idea;
 use App\Models\Status;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Livewire\Livewire;
 use Tests\TestCase;
 

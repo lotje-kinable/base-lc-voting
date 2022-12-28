@@ -8,7 +8,6 @@ use App\Models\Idea;
 use App\Models\User;
 use App\Models\Vote;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Livewire\Livewire;
 use Tests\TestCase;
 
@@ -90,9 +89,9 @@ class VoteIndexPageTest extends TestCase
         $idea = Idea::factory()->create();
 
         Livewire::test(IdeaIndex::class, [
-                'idea' => $idea,
-                'votesCount' => 5,
-            ])
+            'idea' => $idea,
+            'votesCount' => 5,
+        ])
             ->call('vote')
             ->assertRedirect(route('login'));
     }

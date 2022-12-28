@@ -7,7 +7,6 @@ use App\Models\Category;
 use App\Models\Status;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Livewire\Livewire;
 use Tests\TestCase;
 
@@ -79,7 +78,7 @@ class CreateIdeaTest extends TestCase
         $response->assertSee('This is my first idea');
 
         $this->assertDatabaseHas('ideas', [
-            'title' => 'My First Idea'
+            'title' => 'My First Idea',
         ]);
 
         $this->assertDatabaseHas('votes', [
@@ -107,7 +106,7 @@ class CreateIdeaTest extends TestCase
 
         $this->assertDatabaseHas('ideas', [
             'title' => 'My First Idea',
-            'slug' => 'my-first-idea'
+            'slug' => 'my-first-idea',
         ]);
 
         Livewire::actingAs($user)
@@ -120,7 +119,7 @@ class CreateIdeaTest extends TestCase
 
         $this->assertDatabaseHas('ideas', [
             'title' => 'My First Idea',
-            'slug' => 'my-first-idea-2'
+            'slug' => 'my-first-idea-2',
         ]);
     }
 }

@@ -13,7 +13,9 @@ class IdeaShow extends Component
     use WithAuthRedirects;
 
     public $idea;
+
     public $votesCount;
+
     public $hasVoted;
 
     protected $listeners = [

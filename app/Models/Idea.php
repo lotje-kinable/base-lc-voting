@@ -13,6 +13,7 @@ class Idea extends Model
     use HasFactory, Sluggable;
 
     protected $guarded = [];
+
     protected $perPage = 10;
 
     public function comments()
@@ -29,8 +30,8 @@ class Idea extends Model
     {
         return [
             'slug' => [
-                'source' => 'title'
-            ]
+                'source' => 'title',
+            ],
         ];
     }
 
@@ -56,7 +57,7 @@ class Idea extends Model
 
     public function isVotedByUser(?User $user)
     {
-        if (!$user) {
+        if (! $user) {
             return false;
         }
 

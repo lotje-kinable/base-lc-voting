@@ -15,8 +15,11 @@ class IdeasIndex extends Component
     use WithPagination, WithAuthRedirects;
 
     public $status;
+
     public $category;
+
     public $filter;
+
     public $search;
 
     protected $queryString = [
@@ -89,7 +92,7 @@ class IdeasIndex extends Component
                 })
                 ->addSelect(['voted_by_user' => Vote::select('id')
                     ->where('user_id', auth()->id())
-                    ->whereColumn('idea_id', 'ideas.id')
+                    ->whereColumn('idea_id', 'ideas.id'),
                 ])
                 ->withCount('votes')
                 ->withCount('comments')
