@@ -3,16 +3,11 @@
 namespace Tests\Feature\Comments;
 
 use App\Http\Livewire\DeleteComment;
-use App\Http\Livewire\EditComment;
-use App\Http\Livewire\EditIdea;
 use App\Http\Livewire\IdeaComment;
-use App\Http\Livewire\IdeaShow;
-use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Idea;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\Response;
 use Livewire\Livewire;
 use Tests\TestCase;

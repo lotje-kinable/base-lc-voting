@@ -11,8 +11,11 @@ use Livewire\Component;
 class SetStatus extends Component
 {
     public $idea;
+
     public $status;
+
     public $comment;
+
     public $notifyAllVoters;
 
     public function mount(Idea $idea)

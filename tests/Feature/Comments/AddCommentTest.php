@@ -8,7 +8,6 @@ use App\Models\Idea;
 use App\Models\User;
 use App\Notifications\CommentAdded;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Notification;
 use Livewire\Livewire;
 use Tests\TestCase;

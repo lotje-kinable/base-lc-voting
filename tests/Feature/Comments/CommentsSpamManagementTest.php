@@ -9,7 +9,6 @@ use App\Models\Comment;
 use App\Models\Idea;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\Response;
 use Livewire\Livewire;
 use Tests\TestCase;
@@ -101,7 +100,7 @@ class CommentsSpamManagementTest extends TestCase
         Livewire::actingAs($user)
             ->test(IdeaComment::class, [
                 'comment' => $comment,
-                'ideaUserId' => $idea->user_id
+                'ideaUserId' => $idea->user_id,
             ])
             ->assertSee('Mark as Spam');
     }
@@ -119,9 +118,9 @@ class CommentsSpamManagementTest extends TestCase
         ]);
 
         Livewire::test(IdeaComment::class, [
-                'comment' => $comment,
-                'ideaUserId' => $idea->user_id
-            ])
+            'comment' => $comment,
+            'ideaUserId' => $idea->user_id,
+        ])
             ->assertDontSee('Mark as Spam');
     }
 
@@ -213,7 +212,7 @@ class CommentsSpamManagementTest extends TestCase
         Livewire::actingAs($user)
             ->test(IdeaComment::class, [
                 'comment' => $comment,
-                'ideaUserId' => $idea->user_id
+                'ideaUserId' => $idea->user_id,
             ])
             ->assertSee('Not Spam');
     }
@@ -233,7 +232,7 @@ class CommentsSpamManagementTest extends TestCase
         Livewire::actingAs($user)
             ->test(IdeaComment::class, [
                 'comment' => $comment,
-                'ideaUserId' => $idea->user_id
+                'ideaUserId' => $idea->user_id,
             ])
             ->assertDontSee('Not Spam');
     }

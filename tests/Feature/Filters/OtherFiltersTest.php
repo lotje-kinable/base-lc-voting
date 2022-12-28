@@ -9,7 +9,6 @@ use App\Models\Idea;
 use App\Models\User;
 use App\Models\Vote;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Livewire\Livewire;
 use Tests\TestCase;
 
@@ -178,17 +177,17 @@ class OtherFiltersTest extends TestCase
 
         $ideaOne = Idea::factory()->create([
             'title' => 'Idea One',
-            'spam_reports' => 1
+            'spam_reports' => 1,
         ]);
 
         $ideaTwo = Idea::factory()->create([
             'title' => 'Idea Two',
-            'spam_reports' => 2
+            'spam_reports' => 2,
         ]);
 
         $ideaThree = Idea::factory()->create([
             'title' => 'Idea Three',
-            'spam_reports' => 3
+            'spam_reports' => 3,
         ]);
 
         $ideaFour = Idea::factory()->create();

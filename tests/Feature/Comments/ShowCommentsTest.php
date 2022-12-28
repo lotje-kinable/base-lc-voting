@@ -6,7 +6,6 @@ use App\Models\Comment;
 use App\Models\Idea;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class ShowCommentsTest extends TestCase
@@ -125,7 +124,7 @@ class ShowCommentsTest extends TestCase
         $idea = Idea::factory()->create();
 
         $commentOne = Comment::factory()->create([
-            'idea_id' => $idea
+            'idea_id' => $idea,
         ]);
 
         Comment::factory($commentOne->getPerPage())->create([

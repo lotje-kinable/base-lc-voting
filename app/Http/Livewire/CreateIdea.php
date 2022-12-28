@@ -5,7 +5,6 @@ namespace App\Http\Livewire;
 use App\Http\Livewire\Traits\WithAuthRedirects;
 use App\Models\Category;
 use App\Models\Idea;
-use App\Models\Vote;
 use Illuminate\Http\Response;
 use Livewire\Component;
 
@@ -14,7 +13,9 @@ class CreateIdea extends Component
     use WithAuthRedirects;
 
     public $title;
+
     public $category = 1;
+
     public $description;
 
     protected $rules = [

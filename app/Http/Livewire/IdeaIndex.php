@@ -13,7 +13,9 @@ class IdeaIndex extends Component
     use WithAuthRedirects;
 
     public $idea;
+
     public $votesCount;
+
     public $hasVoted;
 
     public function mount(Idea $idea, $votesCount)
