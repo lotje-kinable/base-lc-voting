@@ -22,8 +22,8 @@
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans bg-gray-background text-gray-900 text-sm">
-        <header class="flex flex-col md:flex-row items-center justify-between px-8 py-4">
+    <body class="font-sans text-sm text-gray-900 bg-gray-background">
+        <header class="flex flex-col items-center justify-between px-8 py-4 md:flex-row">
             <a href="/"><img src="{{ asset('img/logo.svg') }}" alt="logo"></a>
             <div class="flex items-center mt-2 md:mt-0">
                 @if (Route::has('login'))
@@ -59,10 +59,10 @@
             </div>
         </header>
 
-        <main class="container mx-auto max-w-custom flex flex-col md:flex-row">
-            <div class="w-70 mx-auto md:mx-0 md:mr-5">
+        <main class="container flex flex-col mx-auto max-w-custom md:flex-row">
+            <div class="mx-auto w-70 md:mx-0 md:mr-5">
                 <div
-                    class="bg-white md:sticky md:top-8 border-2 border-blue rounded-xl mt-16"
+                    class="mt-16 bg-white border-2 md:sticky md:top-8 border-blue rounded-xl"
                     style="
                           border-image-source: linear-gradient(to bottom, rgba(50, 138, 241, 0.22), rgba(99, 123, 255, 0));
                             border-image-slice: 1;
@@ -71,13 +71,13 @@
                             background-clip: content-box, border-box;
                     "
                 >
-                    <div class="text-center px-6 py-2 pt-6">
-                        <h3 class="font-semibold text-base">Add an idea</h3>
-                        <p class="text-xs mt-4">
+                    <div class="px-6 py-2 pt-6 text-center">
+                        <h3 class="text-base font-semibold"> {{ __('text.idea-add') }}</h3>
+                        <p class="mt-4 text-xs">
                             @auth
-                                Let us know what you would like and we'll take a look over!
+                            {{ __('text.idea-add-auth') }}
                             @else
-                                Please login to create an idea.
+                            {{ __('idea-add-no-auth') }}
                             @endauth
                         </p>
                     </div>
