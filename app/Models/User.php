@@ -74,9 +74,7 @@ class User extends Authenticatable
     public function isAdmin()
     {
         return in_array($this->email, [
-            'jeffrey@laracasts.com',
-            'andre_madarang@hotmail.com',
-            'adrian@laracasts.com,',
+            'lotje@lotjekinable.com',
         ]);
     }
 }
